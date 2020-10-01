@@ -2,6 +2,7 @@
 // import { ui } from "./ui";
 // import { Book } from "./book";
 // const Book = require(__dirname + "/book.js");
+// const UI = require(__dirname + "/ui.js");
 
 // Event Listener for add book
 document.getElementById("book-form").addEventListener("submit", function (e) {
@@ -37,5 +38,6 @@ document.getElementById("book-list").addEventListener("click", function (e) {
   // Delete book
   ui.deleteBook(e.target);
   // Show message
+  ui.showAlert("Book Removed", "success");
   e.preventDefault();
 });
