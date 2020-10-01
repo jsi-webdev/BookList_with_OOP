@@ -11,9 +11,23 @@ UI.prototype.addBookToList = function (book) {
   row.innerHTML = `<td>${book.title}</td>
     <td>${book.author}</td>
     <td>${book.isbn}</td>
-    <td><a href="#" class="delete"></a></td>`;
+    <td><a href="#" class="delete">X</a></td>`;
 
   list.appendChild(row);
+};
+
+// Delete Book
+UI.prototype.deleteBook = function (target) {
+  if (target.classList.contains("delete")) {
+    target.parentElement.parentElement.remove();
+  }
+};
+
+// Clear Fields
+UI.prototype.clearFields = function () {
+  document.getElementById("title").value = "";
+  document.getElementById("author").value = "";
+  document.getElementById("isbn").value = "";
 };
 
 // Show Alert
