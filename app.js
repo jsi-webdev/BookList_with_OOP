@@ -3,6 +3,7 @@
 // import { Book } from "./book";
 // const Book = require(__dirname + "/book.js");
 // const UI = require(__dirname + "/ui.js");
+// 이상하네
 
 // Event Listener for add book
 document.getElementById("book-form").addEventListener("submit", function (e) {
