@@ -28,4 +28,16 @@ class Store {
 
     localStorage.setItem("books", JSON.stringify(books));
   }
+
+  static removeBook(isbn) {
+    const books = Store.getBooks();
+
+    books.forEach((book, index) => {
+      if (book.isbn === isbn) {
+        books.splice(index, 1);
+      }
+    });
+
+    localStorage.setItem("books", JSON.stringify(books));
+  }
 }
