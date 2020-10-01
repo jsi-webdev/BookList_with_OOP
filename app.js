@@ -5,6 +5,9 @@
 // const UI = require(__dirname + "/ui.js");
 // 이상하네
 
+// DOM Load Event
+document.addEventListener("DOMContentLoaded", Store.displayBooks);
+
 // Event Listener for add book
 document.getElementById("book-form").addEventListener("submit", function (e) {
   // Get form values
@@ -40,6 +43,8 @@ document.getElementById("book-list").addEventListener("click", function (e) {
   const ui = new UI();
   // Delete book
   ui.deleteBook(e.target);
+  // Remove from LS
+  Store.removeBook(e.target.parentElement.previousElementSibling.textContent); // isbn
   // Show message
   ui.showAlert("Book Removed", "success");
   e.preventDefault();

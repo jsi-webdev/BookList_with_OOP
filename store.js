@@ -11,6 +11,16 @@ class Store {
     return books;
   }
 
+  static displayBooks() {
+    const books = Store.getBooks();
+
+    books.forEach((book) => {
+      const ui = new UI();
+      // Add book to UI
+      ui.addBookToList(book);
+    });
+  }
+
   static addBook(book) {
     const books = Store.getBooks();
 
